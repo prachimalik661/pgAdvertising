@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PG Vedanta</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f6f9;
+            color: #333;
+            line-height: 1.6;
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 3.2em;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 15px;
+            background: linear-gradient(135deg, #27ae60, #2c3e50);
+            border-radius: 8px;
+            display: inline-block;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .image-container {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .main-image {
+            width: 85%;
+            max-width: 750px;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .main-image:hover {
+            transform: scale(1.05);
+        }
+
+        .thumbnails {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .thumbnails img {
+            width: 170px;
+            height: 110px;
+            object-fit: cover;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .thumbnails img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .details {
+            margin-top: 30px;
+            padding: 20px;
+            border-top: 2px solid #27ae60;
+        }
+
+        .details h2 {
+            color: #34495e;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+            text-decoration: underline;
+        }
+
+        .details ul {
+            list-style-type: square;
+            margin: 15px 0;
+            padding-left: 30px;
+        }
+
+        .details p {
+            margin: 12px 0;
+            font-size: 1.2em;
+        }
+
+        .contact {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .contact a {
+            display: inline-block;
+            text-decoration: none;
+            background-color: #27ae60;
+            color: #fff;
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-size: 1.3em;
+            transition: background-color 0.3s, transform 0.3s;
+            margin: 10px;
+        }
+
+        .contact a:hover {
+            background-color: #219150;
+            transform: scale(1.05);
+        }
+
+        .contact .location {
+            background-color: #3498db;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 15px;
+            background-color: #2c3e50;
+            color: #fff;
+            border-radius: 0 0 10px 10px;
+        }
+
+        /* Modal styling for enlarged view */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 900px;
+            height: auto;
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Responsive Styles */
+        @media only screen and (max-width: 768px) {
+            .container {
+                margin: 15px;
+                padding: 15px;
+            }
+
+            .header h1 {
+                font-size: 2.4em;
+            }
+
+            .main-image {
+                width: 90%;
+                max-width: 600px;
+            }
+
+            .thumbnails img {
+                width: 130px;
+                height: 90px;
+            }
+
+            .details h2 {
+                font-size: 1.6em;
+            }
+
+            .contact a {
+                font-size: 1.1em;
+                padding: 10px 20px;
+            }
+
+            .contact {
+                margin-top: 20px;
+            }
+        }
+
+        @media only screen and (max-width: 480px) {
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .main-image {
+                width: 95%;
+                max-width: 100%;
+            }
+
+            .thumbnails img {
+                width: 100px;
+                height: 70px;
+            }
+
+            .details h2 {
+                font-size: 1.4em;
+            }
+
+            .contact a {
+                font-size: 1em;
+                padding: 8px 15px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>PG Vedanta</h1>
+        </div>
+
+        <div class="image-container">
+            <img class="main-image" src="Images/mainIMG1.jpg" alt="Main PG Image" id="mainImage1" onclick="openModal(this.src)">
+            <img class="main-image" src="Images/mainIMG2.jpg" alt="Main PG Image" id="mainImage1" onclick="openModal(this.src)">
+
+            <div class="thumbnails">
+                <img src="Images/img3.jpg" alt="Room Thumbnail" onclick="openModal(this.src)">
+                <img src="Images/img4.jpg" alt="Kitchen Thumbnail" onclick="openModal(this.src)">
+                <img src="Images/img5.jpg" alt="Lawn Thumbnail" onclick="openModal(this.src)">
+                <img src="Images/img6.jpg" alt="Facilities Thumbnail" onclick="openModal(this.src)">
+                <img src="Images/img7.jpg" alt="Facilities Thumbnail" onclick="openModal(this.src)">
+            </div>
+        </div>
+
+        <div class="details">
+            <h2>Price:</h2>
+            <p>Rs 2000 /=PP Onwards</p>
+
+            <h2>Facilities:</h2>
+            <ul>
+                <li>Hot and Cold Water</li>
+                <li>Wi-Fi</li>
+                <li>CCTV</li>
+                <li>Power Backup</li>
+                <li>Well-Furnished Rooms</li>
+                <li>Kitchen Facilities</li>
+                <li>Ventilation and Privacy</li>
+                <li>Green Lush Lawn Facilities (Eco-Friendly)</li>
+            </ul>
+
+            <h2>Location:</h2>
+            <p><a href="29°54'50.8"N 78°07'32.4"E" target="_blank" class="location">Open in Google Maps</a></p>
+        </div>
+
+        <div class="contact">
+            <h2>Contact Us:</h2>
+            <a href="tel:+918368153968">Call Us: +91 83681 53968</a>
+            <a href="tel:+918368152654">Call Us: +91 83681 52654</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 PG Vedanta. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function openModal(src) {
+            var modal = document.createElement("div");
+            modal.className = "modal";
+            var modalContent = document.createElement("img");
+            modalContent.src = src;
+            modalContent.className = "modal-content";
+            var closeBtn = document.createElement("span");
+            closeBtn.className = "close";
+            closeBtn.innerHTML = "&times;";
+            closeBtn.onclick = function() {
+                modal.style.display = "none";
+            };
+            modal.appendChild(modalContent);
+            modal.appendChild(closeBtn);
+            document.body.appendChild(modal);
+            modal.style.display = "flex";
+        }
+
+        console.log("Welcome to PG Vedanta website!");
+    </script>
+</body>
+</html>
