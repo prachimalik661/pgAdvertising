@@ -13,92 +13,83 @@
 
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #f4f6f9;
-            color: #333;
+            background-image: url(Images/haridwar-image.jpg); 
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            text-align: center;
             line-height: 1.6;
-            padding: 0;
             margin: 0;
+        }
+        
+
+        .description {
+            color: navy;  
+            font-size: 1.5em;
+            margin-top: 20px;
+            font-weight: bold;
         }
 
         .container {
             max-width: 1200px;
             margin: 20px auto;
             padding: 20px;
-            background: #fff;
+            background: rgba(255, 255, 255, 0.8);
             border-radius: 12px;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
 
         .header {
-            text-align: center;
             margin-bottom: 30px;
         }
 
         .header h1 {
-            font-size: 3.2em;
+            font-size: 3.5em;
             color: #fff;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
             padding: 15px;
             background: linear-gradient(135deg, #27ae60, #2c3e50);
             border-radius: 8px;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
             display: inline-block;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            font-weight: bold;
+         
         }
 
-        .image-container {
-            text-align: center;
+        .buttons {
+            display: flex;
+            justify-content: center;
             margin-bottom: 30px;
         }
 
-        .main-image {
-            width: 85%;
-            max-width: 750px;
-            height: auto;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-            cursor: pointer;
-            transition: transform 0.3s ease-in-out;
+        .btn {
+            background-color: #27ae60;
+            color: white;
+            padding: 12px 30px;
+            margin: 10px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            display: inline-block;
         }
 
-        .main-image:hover {
-            transform: scale(1.05);
+        .btn:hover {
+            background-color: #913021;
         }
 
-        .thumbnails {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
-            flex-wrap: wrap;
+        .features, .hotel-photos, .booking {
+            display: none;
         }
 
-        .thumbnails img {
-            width: 170px;
-            height: 110px;
-            object-fit: cover;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .thumbnails img:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .details {
+        .details, .contact {
             margin-top: 30px;
-            padding: 20px;
-            border-top: 2px solid #27ae60;
         }
 
-        .details h2 {
+        .details h2, .contact h2 {
             color: #34495e;
-            margin-bottom: 15px;
             font-size: 1.8em;
-            text-decoration: underline;
+            margin-bottom: 15px;
         }
 
         .details ul {
@@ -112,30 +103,23 @@
             font-size: 1.2em;
         }
 
-        .contact {
+        .summary {
+            color: red;  
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+
+        .blink {
+            animation: blink 1s step-start 0s infinite;
+            font-size: 1.5em;
             margin-top: 40px;
-            text-align: center;
+            color: #e74c3c;
         }
 
-        .contact a {
-            display: inline-block;
-            text-decoration: none;
-            background-color: #27ae60;
-            color: #fff;
-            padding: 12px 25px;
-            border-radius: 5px;
-            font-size: 1.3em;
-            transition: background-color 0.3s, transform 0.3s;
-            margin: 10px;
-        }
-
-        .contact a:hover {
-            background-color: #219150;
-            transform: scale(1.05);
-        }
-
-        .contact .location {
-            background-color: #3498db;
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
         }
 
         footer {
@@ -147,7 +131,7 @@
             border-radius: 0 0 10px 10px;
         }
 
-        /* Modal styling for enlarged view */
+        
         .modal {
             display: none;
             position: fixed;
@@ -188,119 +172,168 @@
             cursor: pointer;
         }
 
-        /* Responsive Styles */
-        @media only screen and (max-width: 768px) {
-            .container {
-                margin: 15px;
-                padding: 15px;
-            }
-
-            .header h1 {
-                font-size: 2.4em;
-            }
-
-            .main-image {
-                width: 90%;
-                max-width: 600px;
-            }
-
-            .thumbnails img {
-                width: 130px;
-                height: 90px;
-            }
-
-            .details h2 {
-                font-size: 1.6em;
-            }
-
-            .contact a {
-                font-size: 1.1em;
-                padding: 10px 20px;
-            }
-
-            .contact {
-                margin-top: 20px;
-            }
+        .feature {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
         }
 
-        @media only screen and (max-width: 480px) {
-            .header h1 {
-                font-size: 2em;
-            }
-
-            .main-image {
-                width: 95%;
-                max-width: 100%;
-            }
-
-            .thumbnails img {
-                width: 100px;
-                height: 70px;
-            }
-
-            .details h2 {
-                font-size: 1.4em;
-            }
-
-            .contact a {
-                font-size: 1em;
-                padding: 8px 15px;
-            }
+        .feature img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-right: 20px;
         }
 
+        .feature p {
+            color: navy;
+            font-size: 1.2em;
+        }
+
+        .thumbnails img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+
+        
+        .booking {
+            background-color: #f39c12;  
+            color: #2c3e50;  
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .booking h2 {
+            color: #fff;
+            font-size: 2em;
+        }
+
+        .booking p {
+            font-size: 1.3em;
+        }
+
+        .booking a {
+            color: #fff;
+            background-color: #16a085;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1.1em;
+            text-decoration: none;
+        }
+
+        .booking a:hover {
+            background-color: #1abc9c;
+        }
     </style>
 </head>
 <body>
+
+      
+      <audio id="bell-sound" src="Images/Har Har Gange Instrumental.mp3" autoplay loop></audio>
+
     <div class="container">
+       
         <div class="header">
             <h1>PG Vedanta</h1>
         </div>
+        <div class="description">
+            PG Vedanta is a serene and comfortable guest house located in the holy city of Haridwar. This guest house caters to tourists who are looking for a peaceful and pleasant stay while exploring the spiritual and cultural offerings of Haridwar.
+        </div>
 
-        <div class="image-container">
-            <img class="main-image" src="Images/mainIMG1.jpg" alt="Main PG Image" id="mainImage1" onclick="openModal(this.src)">
-            <img class="main-image" src="Images/mainIMG2.jpg" alt="Main PG Image" id="mainImage1" onclick="openModal(this.src)">
+        
+        <div class="buttons">
+            <a href="#" class="btn" onclick="window.location.href='index.html';">Home</a>
+            <a href="#" class="btn" onclick="showSection('features')">Features</a>
+            <a href="#" class="btn" onclick="showSection('hotel-photos')">Hotel Photos</a>
+            <a href="#" class="btn" onclick="showSection('booking')">Online Booking</a>
+            <a href="#" class="btn" onclick="window.open('https://www.google.com/maps?q=PG+Vedanta+Haridwar', '_blank')">Location</a>
+        </div>
 
+        
+        <div id="features" class="features">
+            <h2>Our Features</h2>
+            <div class="feature">
+                <img src="Images/electricity.jpg" alt="Electricity">
+                <p><strong>Electricity</strong>: 24/7 power supply to ensure your comfort during your stay.</p>
+            </div>
+            <div class="feature">
+                <img src="Images/wifi.jpg" alt="Wi-Fi">
+                <p><strong>Wi-Fi</strong>: High-speed internet for all your browsing and work needs.</p>
+            </div>
+            <div class="feature">
+                <img src="Images/power backup.jpg" alt="Power Backup">
+                <p><strong>Power Backup</strong>: In case of power failure, our backup system ensures you're never without power.</p>
+            </div>
+            <div class="feature">
+                <img src="Images/furnished-room.jpg" alt="Furnished Room">
+                <p><strong>Furnished Rooms</strong>: Rooms equipped with modern furniture for a comfortable stay.</p>
+            </div>
+            <div class="feature">
+                <img src="Images/greenlawn.jpg" alt="Green Lawn">
+                <p><strong>Green Lawn</strong>: A spacious, eco-friendly green lawn to relax and enjoy the outdoors.</p>
+            </div>
+        </div>
+
+        
+        <div id="hotel-photos" class="hotel-photos">
+            <h2>Hotel Photos</h2>
             <div class="thumbnails">
+                <img src="Images/mainIMG1.jpg" alt="Hotel" onclick="openModal(this.src)">
+                <img src="Images/mainIMG2.jpg" alt="Room Thumbnail" onclick="openModal(this.src)">
                 <img src="Images/img3.jpg" alt="Room Thumbnail" onclick="openModal(this.src)">
                 <img src="Images/img4.jpg" alt="Kitchen Thumbnail" onclick="openModal(this.src)">
                 <img src="Images/img5.jpg" alt="Lawn Thumbnail" onclick="openModal(this.src)">
                 <img src="Images/img6.jpg" alt="Facilities Thumbnail" onclick="openModal(this.src)">
-                <img src="Images/img7.jpg" alt="Facilities Thumbnail" onclick="openModal(this.src)">
             </div>
         </div>
 
-        <div class="details">
-            <h2>Price:</h2>
-            <p>Rs 2000 /=PP Onwards</p>
-
-            <h2>Facilities:</h2>
-            <ul>
-                <li>Hot and Cold Water</li>
-                <li>Wi-Fi</li>
-                <li>CCTV</li>
-                <li>Power Backup</li>
-                <li>Well-Furnished Rooms</li>
-                <li>Kitchen Facilities</li>
-                <li>Ventilation and Privacy</li>
-                <li>Green Lush Lawn Facilities (Eco-Friendly)</li>
-            </ul>
-
-            <h2>Location:</h2>
-            <p><a href="29°54'50.8"N 78°07'32.4"E" target="_blank" class="location">Open in Google Maps</a></p>
+        
+        <div id="booking" class="booking">
+            <h2>Contact Us for Online Booking</h2>
+            <p>Call us at: <strong>+91 83681 53968</strong></p>
+            <p>Call us at: <strong>+91 8368152654</strong></p>
+            <p>Or email us at: <strong>anilsingh.198010@gmail.com</strong></p>
+            <p>Or fill out our <a href="https://maps.app.goo.gl/YanNiNgMrP22sGGJ7" target="_blank">Google Form</a> for booking.</p>
         </div>
 
-        <div class="contact">
-            <h2>Contact Us:</h2>
-            <a href="tel:+918368153968">Call Us: +91 83681 53968</a>
-            <a href="tel:+918368152654">Call Us: +91 83681 52654</a>
+        <div class="summary">
+            <p>PG Vedanta offers a serene and comfortable stay with modern amenities. Explore the beauty of Haridwar with us!</p>
         </div>
+
+        
+        <div class="blink">
+            <h2>Thank you for choosing PG Vedanta!</h2>
+        </div>
+
+        
+        <footer>
+            <p>&copy; 2024 PG Vedanta. All Rights Reserved.</p>
+        </footer>
+
     </div>
-
-    <footer>
-        <p>&copy; 2024 PG Vedanta. All Rights Reserved.</p>
-    </footer>
+    
 
     <script>
+         
+         function triggerAudio() {
+            var audio = document.getElementById('bell-sound');
+            audio.play(); 
+        }
+
+
+        function showSection(section) {
+            document.querySelectorAll('.features, .hotel-photos, .booking').forEach(function(sec) {
+                sec.style.display = 'none';
+            });
+            document.getElementById(section).style.display = 'block';
+        }
+
         function openModal(src) {
             var modal = document.createElement("div");
             modal.className = "modal";
@@ -318,8 +351,7 @@
             document.body.appendChild(modal);
             modal.style.display = "flex";
         }
-
-        console.log("Welcome to PG Vedanta website!");
     </script>
+
 </body>
 </html>
