@@ -20,6 +20,7 @@
             text-align: center;
             line-height: 1.6;
             margin: 0;
+            background-image: url('Images/haridwar.jpg');
         }
         
 
@@ -54,13 +55,13 @@
             box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
             display: inline-block;
             font-weight: bold;
-         
         }
 
         .buttons {
             display: flex;
             justify-content: center;
             margin-bottom: 30px;
+            flex-wrap: wrap;
         }
 
         .btn {
@@ -131,7 +132,6 @@
             border-radius: 0 0 10px 10px;
         }
 
-        
         .modal {
             display: none;
             position: fixed;
@@ -200,7 +200,6 @@
             border-radius: 8px;
         }
 
-        
         .booking {
             background-color: #f39c12;  
             color: #2c3e50;  
@@ -230,32 +229,93 @@
         .booking a:hover {
             background-color: #1abc9c;
         }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5em;
+            }
+
+            .description {
+                font-size: 1.2em;
+            }
+
+            .buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                padding: 10px;
+                margin: 5px 0;
+            }
+
+            .feature {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .feature img {
+                margin-bottom: 10px;
+            }
+
+            .thumbnails img {
+                width: 120px;
+                height: 120px;
+            }
+
+            .container {
+                padding: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .description {
+                font-size: 1em;
+            }
+
+            .feature img {
+                width: 80px;
+                height: 80px;
+            }
+
+            .thumbnails img {
+                width: 100px;
+                height: 100px;
+            }
+        }
     </style>
 </head>
 <body>
 
-      
-      <audio id="bell-sound" src="Images/Har Har Gange Instrumental.mp3" autoplay loop></audio>
+    <audio id="bell-sound" src="Images/Har Har Gange Instrumental.mp3" autoplay loop></audio>
 
     <div class="container">
-       
         <div class="header">
             <h1>PG Vedanta</h1>
         </div>
         <div class="description">
-            PG Vedanta is a serene and comfortable guest house located in the holy city of Haridwar. This guest house caters to tourists who are looking for a peaceful and pleasant stay while exploring the spiritual and cultural offerings of Haridwar.
+            PG Vedanta is a serene and comfortable PG (Paying Guest) located in the holy city of Haridwar. This PG caters to tourists who are looking for a peaceful and pleasant stay while exploring the spiritual and cultural offerings of Haridwar.
         </div>
 
-        
         <div class="buttons">
             <a href="#" class="btn" onclick="window.location.href='index.html';">Home</a>
             <a href="#" class="btn" onclick="showSection('features')">Features</a>
-            <a href="#" class="btn" onclick="showSection('hotel-photos')">Hotel Photos</a>
+            <a href="#" class="btn" onclick="showSection('hotel-photos')">PG Photos</a>
             <a href="#" class="btn" onclick="showSection('booking')">Online Booking</a>
-            <a href="#" class="btn" onclick="window.open('https://www.google.com/maps?q=PG+Vedanta+Haridwar', '_blank')">Location</a>
+            <a href="#" class="btn" onclick="openMap()">Location</a>
+
+            <script>
+                function openMap() {
+                    window.open('https://maps.app.goo.gl/YanNiNgMrP22sGGJ7');
+                }
+            </script>
         </div>
 
-        
         <div id="features" class="features">
             <h2>Our Features</h2>
             <div class="feature">
@@ -280,52 +340,57 @@
             </div>
         </div>
 
-        
         <div id="hotel-photos" class="hotel-photos">
-            <h2>Hotel Photos</h2>
+            <h2>PG Photos</h2>
             <div class="thumbnails">
-                <img src="Images/mainIMG1.jpg" alt="Hotel" onclick="openModal(this.src)">
-                <img src="Images/mainIMG2.jpg" alt="Room Thumbnail" onclick="openModal(this.src)">
-                <img src="Images/img3.jpg" alt="Room Thumbnail" onclick="openModal(this.src)">
-                <img src="Images/img4.jpg" alt="Kitchen Thumbnail" onclick="openModal(this.src)">
-                <img src="Images/img5.jpg" alt="Lawn Thumbnail" onclick="openModal(this.src)">
-                <img src="Images/img6.jpg" alt="Facilities Thumbnail" onclick="openModal(this.src)">
+                <img src="Images/mainIMG1.jpg" alt="PG" onclick="openModal(this.src)">
+                <img src="Images/mainIMG2.jpg" alt="Thumbnail" onclick="openModal(this.src)">
+                <img src="Images/img3.jpg" alt="Thumbnail" onclick="openModal(this.src)">
+                <img src="Images/img4.jpg" alt="Thumbnail" onclick="openModal(this.src)">
+                <img src="Images/img5.jpg" alt="Thumbnail" onclick="openModal(this.src)">
+                <img src="Images/img7.jpg" alt="Thumbnail" onclick="openModal(this.src)">
+                <img src="Images/img8.jpg" alt="Thumbnail" onclick="openModal(this.src)">
+                <img src="Images/img9.jpg" alt="Thumbnail" onclick="openModal(this.src)">
+                <img src="Images/img10.jpg" alt="Thumbnail" onclick="openModal(this.src)">
+                <img src="Images/img11.jpg" alt="Thumbnail" onclick="openModal(this.src)">
+                <img src="Images/img12.jpg" alt="Thumbnail" onclick="openModal(this.src)">
+                <img src="Images/img13.jpg" alt="Thumbnail" onclick="openModal(this.src)">
+                <img src="Images/img14.jpg" alt="Thumbnail" onclick="openModal(this.src)">
+                <img src="Images/img15.jpg" alt="Thumbnail" onclick="openModal(this.src)">
+                <img src="Images/img16.jpg" alt="Thumbnail" onclick="openModal(this.src)">
+                <img src="Images/img17.jpg" alt="Thumbnail" onclick="openModal(this.src)">
+                <img src="Images/img18.jpg" alt="Thumbnail" onclick="openModal(this.src)">
+                <img src="Images/img6.jpg" alt="Thumbnail" onclick="openModal(this.src)">
             </div>
         </div>
 
-        
         <div id="booking" class="booking">
             <h2>Contact Us for Online Booking</h2>
             <p>Call us at: <strong>+91 83681 53968</strong></p>
             <p>Call us at: <strong>+91 8368152654</strong></p>
             <p>Or email us at: <strong>anilsingh.198010@gmail.com</strong></p>
-            <p>Or fill out our <a href="https://maps.app.goo.gl/YanNiNgMrP22sGGJ7" target="_blank">Google Form</a> for booking.</p>
+            <p>Or fill out our <a href="https://forms.gle/GA4ALGo4mAeveKoFA" target="_blank">Google Form</a> for booking.</p>
         </div>
 
         <div class="summary">
             <p>PG Vedanta offers a serene and comfortable stay with modern amenities. Explore the beauty of Haridwar with us!</p>
         </div>
 
-        
         <div class="blink">
             <h2>Thank you for choosing PG Vedanta!</h2>
         </div>
 
-        
         <footer>
             <p>&copy; 2024 PG Vedanta. All Rights Reserved.</p>
         </footer>
 
     </div>
-    
 
     <script>
-         
-         function triggerAudio() {
+        function triggerAudio() {
             var audio = document.getElementById('bell-sound');
             audio.play(); 
         }
-
 
         function showSection(section) {
             document.querySelectorAll('.features, .hotel-photos, .booking').forEach(function(sec) {
